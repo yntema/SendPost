@@ -1,4 +1,7 @@
-angular.module('mailthat', ['ngRoute'])
+angular.module('mailthat', [
+	'mailthat.login',
+	'ngRoute'
+])
 .config(function ($routeProvider, $httpProvider) {
   $routeProvider
     .when('/login', {
@@ -8,4 +11,4 @@ angular.module('mailthat', ['ngRoute'])
     .otherwise({
       redirectTo: '/'
     });
-})
+});
