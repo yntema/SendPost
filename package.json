@@ -1,0 +1,28 @@
+{
+  "name": "mail-that",
+  "version": "0.0.0",
+  "description": "App for easily mailing instagram photos as postcards",
+  "author": "Gerrit Yntema",
+  "contributors": [
+    "Gerrit Yntema"
+  ],
+  "scripts": {
+    "start": "gulp",
+    "lint": "jscs ./"
+  },
+  "pre-commit": "lint",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/yntema/mail-that.git"
+  },
+  "license": "UNLICENSED",
+  "private": false,
+  "dependencies": {
+    "body-parser": "^1.4.3",
+    "express": "^4.4.5",
+    "jwt-simple": "^0.2.0",
+    "morgan": "^1.1.1",
+    "q": "^1.4.1",
+    "request": "^2.36.0"
+  }
+}
