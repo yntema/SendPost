@@ -1,2 +1,4 @@
 angular.module('mailthat.login', [])
-.controller('LoginCtrl', )
+.controller('LoginCtrl', function($scope, $window, $location) {
+
+})
