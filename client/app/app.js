@@ -1,6 +1,6 @@
 angular.module('mailthat', [
   'mailthat.login',
-  'mailthat.services'
+  'mailthat.services',
   'ngRoute'
 ])
 .config(function ($routeProvider, $httpProvider) {
@@ -9,7 +9,7 @@ angular.module('mailthat', [
       templateUrl: 'app/auth/login.html',
       controller: 'LoginCtrl'
     })
-    .when('/handleauth', {
+    .when('/access_token={access_token}', {
       templateUrl: 'app/auth/login.html',
       controller: 'CreateCtrl',
       redirectTo: '/create'
