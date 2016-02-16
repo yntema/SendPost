@@ -1,6 +1,5 @@
 angular.module('mailthat.pics', [])
-.controller('PicsCtrl', function($scope, $stateParams, $window, $state, Auth, Postcard) {
-  // $scope.token = $stateParams.access_token;
+.controller('PicsCtrl', function($scope, $stateParams, $window, $state, Postcard) {
 
   $scope.pics;
 
@@ -8,7 +7,7 @@ angular.module('mailthat.pics', [])
     Postcard.setPic(pic)
   }
 
-  Auth.getPics(function(picArray) {
+  Postcard.getPics(function(picArray) {
     $scope.pics = picArray;
   });
 
