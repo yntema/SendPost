@@ -3,6 +3,7 @@ var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var instagram = require('instagram-node').instagram();
 var cookieParser = require('cookie-parser');
+var Lob = require('lob')('eece1db0db414955db0127598369cfdf3075a022');
 
 var app = express();
 
@@ -10,6 +11,25 @@ app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/../client'));
+
+
+app.post('/postcard', function (req, res, next) {
+  console.log('data sent to lob:', req.body);
+  Lob.postcards.create({
+    description: 'Demo Postcard job',
+    to: {
+      name: req.body.name,
+      address_line1: req.body.address,
+      address_city: req.body.city,
+      address_state: req.body.state,
+      address_zip: req.body.postalCode
+    },
+    front: req.body.front,
+    message: req.body.message
+  }, function (err, res) {
+    console.log(err, res);
+  });
+})
 
 // instagram.use({
 //   client_id: 'cd40bce829ce433686850a44174b2dda',

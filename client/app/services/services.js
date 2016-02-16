@@ -33,12 +33,21 @@ angular.module('mailthat.services', [])
   }
 
   var setPic = function(pic) {
-    picture = pic.images.standard_resolution.url;
+    picture = pic.images.standard_resolution.url.split("?")[0];
     $location.path('/create');
   }
 
-  var sendPostcard = function() {
-
+  var sendPostcard = function(postcard) {
+    console.log('postcard in services.js', postcard);
+   // pass object with params to server endpoint
+   return $http({
+     method: 'POST',
+     url: '/postcard',
+     data: postcard
+   })
+   .then(function (resp) {
+     console.log('response from sendPostcard: ', resp);
+   });
   }
 
   return {
