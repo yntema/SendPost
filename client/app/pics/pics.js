@@ -8,8 +8,6 @@ angular.module('mailthat.pics', [])
     Postcard.setPic(pic)
   }
 
-  // Auth.saveToken($scope.token);
-
   Auth.getPics(function(picArray) {
     $scope.pics = picArray;
   });

@@ -1,5 +1,6 @@
 angular.module('mailthat', [
   'mailthat.login',
+  'mailthat.auth',
   'mailthat.services',
   'mailthat.create',
   'mailthat.pics',
@@ -14,10 +15,11 @@ angular.module('mailthat', [
     .state('login', {
       url: '/login',
       templateUrl: 'app/auth/login.html',
+      controller: 'LoginCtrl'
     })
     .state('auth', {
       url: '/access_token={access_token}',
-      controller: 'LoginCtrl',
+      controller: 'AuthCtrl'
     })
     .state('pics', {
       url: '/pics',
