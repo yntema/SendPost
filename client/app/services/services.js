@@ -33,12 +33,17 @@ angular.module('mailthat.services', [])
   }
 
   var setPic = function(pic) {
-    picture = pic.images.low_resolution.url;
+    picture = pic.images.standard_resolution.url;
     $location.path('/create');
+  }
+
+  var sendPostcard = function() {
+
   }
 
   return {
     setPic: setPic,
-    getPic: getPic
+    getPic: getPic,
+    sendPostcard: sendPostcard
   };
 })

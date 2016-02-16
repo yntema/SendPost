@@ -3,7 +3,8 @@ angular.module('mailthat', [
   'mailthat.services',
   'mailthat.create',
   'mailthat.pics',
-  'ui.router'
+  'ui.router',
+  'ngMaterial'
 ])
 .config(function ($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise("/");
