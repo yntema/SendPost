@@ -1,3 +1,7 @@
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
 .aligner {
   display: flex;
   align-items: center;
@@ -8,4 +12,17 @@
 .instaButton {
 	max-width: 200px;
 	max-height: 100px;
+}
+
+.pics {
+  float: left;
+  /*border: 2px solid #3498db;*/
+}
+
+.header {
+  background-color: #3498db;
+  color: white;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
 }

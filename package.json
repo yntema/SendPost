@@ -23,6 +23,7 @@
     "express": "^4.4.5",
     "instagram-node": "^0.5.8",
     "jwt-simple": "^0.2.0",
+    "lob": "^3.8.0",
     "morgan": "^1.1.1",
     "q": "^1.4.1",
     "request": "^2.36.0"

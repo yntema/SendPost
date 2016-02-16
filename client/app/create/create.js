@@ -1,11 +1,6 @@
 angular.module('mailthat.create', [])
-.controller('CreateCtrl', function($scope, $stateParams, $window, $state, Auth) {
-  $scope.token = $stateParams.access_token;
+.controller('CreateCtrl', function($scope, $stateParams, $window, $state, Postcard) {
 
-  $scope.pics;
-
-  Auth.getPics($scope.token, function(picArray) {
-    $scope.pics = picArray;
-  });
+  $scope.picture = Postcard.getPic();
 
 });
