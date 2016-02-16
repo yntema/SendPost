@@ -18,7 +18,6 @@ app.post('/postcard', function (req, res, next) {
 
   var template = fs.readFileSync('/Users/gerrityntema/hackreactor/MVP/mail-that/client/app/create/postcard.html').toString();
 
-  console.log('template............', template);
   Lob.postcards.create({
     description: 'Demo Postcard job',
     to: {
@@ -33,8 +32,10 @@ app.post('/postcard', function (req, res, next) {
     data: {
       picture: req.body.front
       }
-  }, function (err, data) {
-    res.json(data);
+  })
+  .then(function (data) {
+    console.log('data from lob create', data);
+    res.send(data);
   });
 })
 

@@ -9,12 +9,8 @@ angular.module('mailthat.services', [])
 
   var getPics = function(token, callback) {
     var endpoint = 'https://api.instagram.com/v1/users/self/media/recent/?access_token='+token+'&callback=JSON_CALLBACK';
-
-    console.log('token passed', token);
-
     $http.jsonp(endpoint)
     .success(function(response) {
-      console.log('data from ig: ',response);
       callback(response.data);
     });
   }
@@ -27,6 +23,7 @@ angular.module('mailthat.services', [])
 .factory('Postcard', function ($rootScope, $location, $http) {
 
   var picture;
+  var sentCard;
 
   var getPic = function() {
     return picture;
@@ -38,7 +35,6 @@ angular.module('mailthat.services', [])
   }
 
   var sendPostcard = function(postcard) {
-    console.log('postcard in services.js', postcard);
    // pass object with params to server endpoint
    return $http({
      method: 'POST',
@@ -46,13 +42,20 @@ angular.module('mailthat.services', [])
      data: postcard
    })
    .then(function (resp) {
-     console.log('response from sendPostcard: ', resp);
+      console.log('response from sendPostcard: ', resp);
+      sentCard = resp.data;
+      $location.path('/sent');
    });
+  }
+
+  var getSentCard = function () {
+    return sentCard;
   }
 
   return {
     setPic: setPic,
     getPic: getPic,
-    sendPostcard: sendPostcard
+    sendPostcard: sendPostcard,
+    getSentCard: getSentCard
   };
 })

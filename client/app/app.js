@@ -17,7 +17,7 @@ angular.module('mailthat', [
       controller: 'LoginCtrl'
     })
     .state('auth', {
-      url: "/access_token={access_token}",
+      url: '/access_token={access_token}',
       templateUrl: 'app/pics/pics.html',
       controller: 'PicsCtrl'
     })
@@ -32,5 +32,10 @@ angular.module('mailthat', [
           controller: 'CreateCtrl'
         }
       }
+    })
+    .state('sent', {
+      url: '/sent',
+      templateUrl: 'app/create/sent.html',
+      controller: 'CreateCtrl'
     });
 });

@@ -1,1 +1,7 @@
-sent.html
+<div class="sent-card-info">
+  <h2>You postcard is on its way!!!</h2>
+  <p>It should arrive by: {{ sentCard.expected_delivery_date }}</p>
+</div>
+<div class='instaButton'>
+  <a target="_blank" href='{{ sentCard.url }}'>View Your Postcard</a>
+</div>

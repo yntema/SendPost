@@ -1,5 +1,5 @@
 body {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Poiret One', cursive;
 }
 
 .instaButton {
@@ -33,11 +33,28 @@ body {
   /*border: 2px solid #3498db;*/
 }
 
+.card-container {
+  width: 44vw;
+  max-height: 500px;
+  background-color: #4C5365;
+  padding: 0;
+}
+
+.mainPic {
+  width: 31vw;
+  max-height: 500px;
+}
+
 .header {
   background-color: #4C5365;
   color: white;
   margin: 0;
   padding: 10px;
+  text-align: center;
+}
+
+.sent-card-info {
+  margin-top: 80px;
   text-align: center;
 }
 
@@ -59,6 +76,11 @@ body {
     background-color: #fff;
     opacity: 0; 
     visibility: hidden;
+    border-radius: 5px;
+}
+
+.grid-img:hover {
+  border: 2px solid #FED587;
 }
 
 .grid-img.img-loaded{

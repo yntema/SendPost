@@ -1,8 +1,8 @@
 <div layout="row" ng-cloak layout-fill >
 
   <section layout="column" flex layout-padding layout-margin >
-    <div>
-      <img src='{{ picture }}'>
+    <div class="card-container">
+      <img class="mainPic" src='{{ picture }}'>
     </div>
   </section>
   
@@ -16,32 +16,34 @@
           <div layout-gt-sm="row">
             <md-input-container class="md-block" flex-gt-sm>
               <label>Full Name</label>
-              <input ng-model="user.name">
+              <input ng-model="user.name" required>
             </md-input-container>
           </div>
           <md-input-container class="md-block">
             <label>Address</label>
-            <input ng-model="user.address">
+            <input ng-model="user.address" required>
           </md-input-container>
           <md-input-container md-no-float class="md-block">
-            <input ng-model="user.address2" placeholder="Address 2">
+            <label>Address line 2</label>
+            <input ng-model="user.address2">
           </md-input-container>
           <div layout-gt-sm="row">
             <md-input-container class="md-block" flex-gt-sm>
               <label>City</label>
-              <input ng-model="user.city">
+              <input ng-model="user.city" required>
             </md-input-container>
             <md-input-container class="md-block" flex-gt-sm>
               <label>State</label>
-              <md-select ng-model="user.state">
-                <md-option ng-repeat="state in states" value="{{state.abbrev}}">
-                  {{state.abbrev}}
-                </md-option>
-              </md-select>
+              <input name="state" ng-model="user.state" md-minlength="2" md-maxlength="2" required>
+              <div ng-messages="userForm.state.$error" role="alert" multiple>
+                <div ng-message="required" class="my-message">You must supply a postal code.</div>
+                <div ng-message="minlength">Please use the 2 digit state code</div>
+                <div ng-message="maxlength">Please use the 2 digit state code</div>
+              </div>
             </md-input-container>
             <md-input-container class="md-block" flex-gt-sm>
               <label>Postal Code</label>
-              <input name="postalCode" ng-model="user.postalCode" placeholder="12345"
+              <input name="postalCode" ng-model="user.postalCode"
                      required ng-pattern="/^[0-9]{5}$/" md-maxlength="5">
               <div ng-messages="userForm.postalCode.$error" role="alert" multiple>
                 <div ng-message="required" class="my-message">You must supply a postal code.</div>
@@ -56,9 +58,9 @@
           </div>
           <md-input-container class="md-block">
             <label>Message</label>
-            <textarea ng-model="user.message" md-maxlength="300" rows="5" md-select-on-focus></textarea>
+            <textarea ng-model="user.message" md-maxlength="300" rows="5" required md-select-on-focus></textarea>
           </md-input-container>
-          <md-button type="submit" class="md-primary">Send It!</md-button>
+          <md-button type="submit" class="md-raised md-primary">Send It!</md-button>
         </form>
       </div>
     </md-content>
