@@ -1,23 +1,42 @@
 angular.module('mailthat.services', [])
-.factory('Auth', function ($rootScope, $location, $http) {
+.factory('Auth', function ($rootScope, $location, $window, $http) {
 
-  var client_id = 'cd40bce829ce433686850a44174b2dda';
+  var _access_token;
   
-  var login = function() {
+  var saveToken = function (token) {
+    _access_token = token;
+    $window.localStorage.setItem('com.mailthat', token);
+    $location.path('/pics');
+  };
 
+  var getPics = function(callback) {
+    if(!!$window.localStorage.getItem('com.mailthat')) {
+      var endpoint = 'https://api.instagram.com/v1/users/self/media/recent/?access_token='+$window.localStorage.getItem('com.mailthat')+'&callback=JSON_CALLBACK';
+
+      $http.jsonp(endpoint)
+      .success(function(response) {
+        callback(response.data);
+      });
+    } else {
+      $location.path('/login');
+    }
   }
 
-  var getPics = function(token, callback) {
-    var endpoint = 'https://api.instagram.com/v1/users/self/media/recent/?access_token='+token+'&callback=JSON_CALLBACK';
-    $http.jsonp(endpoint)
-    .success(function(response) {
-      callback(response.data);
-    });
-  }
+  var isAuth = function () {
+    console.log('locStore: ', $window.localStorage.getItem('com.mailthat'));
+    return !!$window.localStorage.getItem('com.mailthat');
+  };
+
+  var signout = function () {
+    $window.localStorage.removeItem('com.mailthat');
+    $location.path('/login');
+  };
 
   return {
     getPics: getPics,
-    login: login
+    saveToken: saveToken,
+    isAuth: isAuth,
+    signout: signout
   };
 })
 .factory('Postcard', function ($rootScope, $location, $http) {
