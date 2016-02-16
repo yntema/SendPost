@@ -5,7 +5,6 @@ angular.module('mailthat.pics', [])
   $scope.pics;
 
   $scope.postcard = function (pic) {  // pass in pic that was clicked
-    console.log('pic clicked: ', pic);
     Postcard.setPic(pic)
   }
 

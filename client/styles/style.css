@@ -2,16 +2,30 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-.aligner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
+.instaButton {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-55%, -80%);
+  text-align: center;
+  width: 300px;
 }
 
-.instaButton {
-	max-width: 200px;
-	max-height: 100px;
+.instaButton > a {
+  color: #fff;
+  font-size: 1.5em;
+  text-decoration: none;
+  padding: 20px 20px;
+  background-color: #F47D31;
+  position: relative;
+  top: -6px;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+  border: 0;
 }
 
 .pics {
@@ -20,9 +34,34 @@ body {
 }
 
 .header {
-  background-color: #3498db;
+  background-color: #4C5365;
   color: white;
   margin: 0;
-  padding: 20px;
+  padding: 10px;
   text-align: center;
+}
+
+
+.grid {
+    border: 1px solid #cccccc;
+    list-style: none;
+    background: #ffffff;
+    box-sizing: border-box;
+    -moz-box-sizing : border-box;
+    -webkit-transition: all 0.6s ease-out; 
+    transition: all 0.6s ease-out; 
+}
+.grid-img {
+    width: 100%;
+    vertical-align: middle;
+    -webkit-transition: opacity 0.6s ease-out;  
+    transition: opacity 0.6s ease-out;
+    background-color: #fff;
+    opacity: 0; 
+    visibility: hidden;
+}
+
+.grid-img.img-loaded{
+    visibility: visible;
+    opacity: 1;
 }
