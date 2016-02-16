@@ -5,8 +5,7 @@ angular.module('mailthat', [
   'mailthat.create',
   'mailthat.pics',
   'ui.router',
-  'ngMaterial',
-  'angularGrid'
+  'ngMaterial'
 ])
 .config(function ($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise("/login");

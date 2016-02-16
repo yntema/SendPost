@@ -1,11 +1,5 @@
-<!-- <div>
+<div class="gallery-container">
   <div ng-repeat='pic in pics' class='pics'>
-    <img src="{{ pic.images.low_resolution.url }}" ng-click='postcard(pic)'>
+    <img class="images" src="{{ pic.images.low_resolution.url }}" ng-click='postcard(pic)'>
   </div>
 </div>
- -->
-<ul class="dynamic-grid" angular-grid="pics" ag-grid-width="250" ag-gutter-size="20" ag-id="gallery" ag-refresh-on-img-load="false" >
-  <li data-ng-repeat="pic in pics" class="grid">
-      <img src="{{pic.images.low_resolution.url}}" class="grid-img" ng-click='postcard(pic)'/>
-  </li>
-</ul>
