@@ -5,6 +5,4 @@ angular.module('mailthat.login', [])
   var instaLogin = function() {
     
   }
-
-  return instaLogin;
 })

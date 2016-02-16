@@ -1,20 +1,21 @@
 angular.module('mailthat', [
   'mailthat.login',
   'mailthat.services',
-  'ngRoute'
+  'mailthat.create',
+  'ui.router'
 ])
-.config(function ($routeProvider, $httpProvider) {
-  $routeProvider
-    .when('/login', {
+.config(function ($stateProvider, $urlRouterProvider) {
+  $urlRouterProvider.otherwise("/");
+
+  $stateProvider
+    .state('login', {
+      url: '/login',
       templateUrl: 'app/auth/login.html',
       controller: 'LoginCtrl'
     })
-    .when('/access_token={access_token}', {
-      templateUrl: 'app/auth/login.html',
-      controller: 'CreateCtrl',
-      redirectTo: '/create'
-    })
-    .otherwise({
-      redirectTo: '/'
+    .state('auth', {
+      url: "/access_token={access_token}",
+      templateUrl: 'app/create/create.html',
+      controller: 'CreateCtrl'
     });
 });
