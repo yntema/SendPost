@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 var instagram = require('instagram-node').instagram();
 var cookieParser = require('cookie-parser');
 var Lob = require('lob')('eece1db0db414955db0127598369cfdf3075a022');
+var fs = require('fs');
 
 var app = express();
 
@@ -14,7 +15,10 @@ app.use(express.static(__dirname + '/../client'));
 
 
 app.post('/postcard', function (req, res, next) {
-  console.log('data sent to lob:', req.body);
+
+  var template = fs.readFileSync('/Users/gerrityntema/hackreactor/MVP/mail-that/client/app/create/postcard.html').toString();
+
+  console.log('template............', template);
   Lob.postcards.create({
     description: 'Demo Postcard job',
     to: {
@@ -24,10 +28,13 @@ app.post('/postcard', function (req, res, next) {
       address_state: req.body.state,
       address_zip: req.body.postalCode
     },
-    front: req.body.front,
-    message: req.body.message
-  }, function (err, res) {
-    console.log(err, res);
+    front: template,
+    message: req.body.message,
+    data: {
+      picture: req.body.front
+      }
+  }, function (err, data) {
+    res.json(data);
   });
 })
 

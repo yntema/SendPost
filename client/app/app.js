@@ -22,7 +22,14 @@ angular.module('mailthat', [
     })
     .state('create', {
       url: '/create',
-      templateUrl: 'app/create/create.html',
-      controller: 'CreateCtrl'
+      views: { 
+        '': {templateUrl: 'app/create/create.html',
+             controller: 'CreateCtrl'
+            },
+        'postcard@create': {
+          templateUrl: 'app/create/postcard.html',
+          controller: 'CreateCtrl'
+        }
+      }
     });
 });

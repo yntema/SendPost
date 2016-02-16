@@ -5,6 +5,7 @@ angular.module('mailthat.create', [])
 
   $scope.user = {};
 
+
   $scope.sendIt = function() {
     Postcard.sendPostcard({
       name: $scope.user.name,
@@ -14,6 +15,9 @@ angular.module('mailthat.create', [])
       postalCode: $scope.user.postalCode,
       front: $scope.picture,
       message: $scope.user.message
+    })
+    .then(function (data) {
+      console.log('response from lob in create.js', data);
     })
   };
 
