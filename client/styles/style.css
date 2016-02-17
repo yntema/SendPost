@@ -70,13 +70,6 @@ h1 > a {
   opacity: 0.8;
 }
 
-.card-container {
-  margin-top: 50px;
-  width: 44vw;
-  max-height: 500px;
-  background-color: #F39354;
-  padding: 0;
-}
 
 .form-background {
   background-color: #FED587;
@@ -87,13 +80,51 @@ h1 > a {
   color: #4C5365;
 }
 
-.mainPic {
-  width: 31vw;
-  max-height: 500px;
+.card-container {
+  width: 37vw;
+  height: 45vh;
+  border: 1px solid #4C5365;
+  padding: 0;
+  margin: 0 auto;
 }
-
+.mainPic {
+  width: 25vw;
+  height: 45vh;
+}
 
 .sent-card-info {
   margin-top: 0px;
   text-align: center;
 }
+
+.card-container-back {
+  margin: 0 auto;
+  border: 1px solid #000;
+  width: 37vw;
+}
+
+.message {
+  width: 18vw;
+  height: 45vh;
+  border-right: 1px solid #000;
+  overflow-wrap: break-word;
+}
+
+.message > p {
+  font-family: "Times New Roman", Times, serif;
+  width: 20vw;
+}
+
+.address {
+  width: 18vw;
+  height: 45vh;
+  padding-top: 22vh;
+  padding-left: 4vw;
+}
+.address > p {
+  font-family: "Times New Roman", Times, serif;
+  margin: 0;
+}
+
+
+

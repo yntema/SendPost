@@ -4,6 +4,17 @@
     <div class="card-container">
       <img class="mainPic" src='{{ picture }}'>
     </div>
+    <div class="card-container-back" layout="row">
+      <div layout="column" class="message">
+        <p>{{ user.message }}
+      </div>
+      <div layout="column" class="address">
+        <p>{{ user.name }}</p>
+        <p>{{ user.address }}</p>
+        <p>{{ user.city }}, {{ user.state }} {{ user.postalCode }}</p>
+      </div>
+
+    </div>
   </section>
   
   <section layout="column" flex layout-padding layout-margin >
