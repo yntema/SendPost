@@ -1,0 +1,24 @@
+<div class="checkout-container">
+  <div class='checkout'>
+    <a href='/#/sent'>Confirm Your Order</a>
+  </div>
+</div>
+
+<div layout="row" ng-cloak layout-fill >
+
+  <section layout="column" flex layout-padding layout-margin >
+    <div class="card-container">
+      <img class="mainPic" src='{{ picture }}'>
+    </div>
+  </section>
+</div>
+<div class="card-container-back" layout="row">
+  <div layout="column" class="message">
+    <p>{{ sentCard.message }}
+  </div>
+  <div layout="column" class="address">
+    <p>{{ sentCard.to.name }}</p>
+    <p>{{ sentCard.to.address_line1 }}</p>
+    <p>{{ sentCard.to.address_city }} {{ sentCard.to.address_state }} {{ sentCard.address_postalCode }}</p>
+  </div>
+</div>
