@@ -37,6 +37,11 @@ angular.module('mailthat', [
         }
       }
     })
+    .state('checkout', {
+      url: '/checkout',
+      templateUrl: 'app/create/checkout.html',
+      controller: 'CreateCtrl'
+    })
     .state('sent', {
       url: '/sent',
       templateUrl: 'app/create/sent.html',

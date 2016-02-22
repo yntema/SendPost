@@ -18,7 +18,7 @@ app.use(express.static(__dirname + '/../client'));
 app.post('/postcard', function (req, res, next) {
 
   var template = fs.readFileSync('/Users/gerrityntema/hackreactor/MVP/mail-that/client/app/create/postcard.html').toString();
-
+  console.log('.................', req.body);
   Lob.postcards.create({
     description: 'Demo Postcard job',
     to: {
@@ -31,8 +31,9 @@ app.post('/postcard', function (req, res, next) {
     front: template,
     message: req.body.message,
     data: {
-      picture: req.body.front
-      }
+      picture: req.body.front,
+      messageFront: req.body.messageFront
+    }
   })
   .then(function (data) {
     console.log('data from lob create', data);

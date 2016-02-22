@@ -46,6 +46,58 @@ h1 > a {
   border: 0;
 }
 
+.send-another {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-55%, 50%);
+  text-align: center;
+  width: 300px;
+}
+
+.send-another > a {
+  color: #4C5365;
+  font-size: 1.5em;
+  text-decoration: none;
+  padding: 20px 20px;
+  background-color: #FED587;
+  position: relative;
+  top: -6px;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+  border: 0;
+}
+.checkout {
+  position: fixed;
+  top: 12%;
+  left: 50%;
+  transform: translate(-55%, -80%);
+  text-align: center;
+  width: 300px;
+}
+
+.checkout > a{
+  color: #fff;
+  font-size: 1.5em;
+  text-decoration: none;
+  padding: 20px 20px;
+  background-color: #F47D31;
+  position: relative;
+  top: -6px;
+  display: inline-block;
+  width: 20vw;
+  height: 100%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+  border: 0;
+}
+
+
 .gallery-container {
   margin: 20px auto;
   max-width: 800px;
@@ -81,48 +133,60 @@ h1 > a {
 }
 
 .card-container {
-  width: 37vw;
-  height: 45vh;
-  border: 1px solid #4C5365;
-  padding: 0;
+  width: 23vw;
+  height: 55vh;
+  padding: 15px;
   margin: 0 auto;
+  border: 1px solid black;
 }
 .mainPic {
-  width: 25vw;
-  height: 45vh;
+  width: 23vw;
+  height: 38vh;
 }
 
 .sent-card-info {
-  margin-top: 0px;
+  margin-top: 50px;
   text-align: center;
 }
 
 .card-container-back {
+  width: 35vw;
+  height: 40vh;
+  padding: 15px;
   margin: 0 auto;
   border: 1px solid #000;
-  width: 37vw;
+  margin-top: 10px;
+}
+
+.message-front {
+  text-align: center;
+  font-size: 1.5em;
+  margin-top: 35px;
 }
 
 .message {
-  width: 18vw;
-  height: 45vh;
+  width: 17vw;
+  height: 100%;
   border-right: 1px solid #000;
   overflow-wrap: break-word;
 }
 
 .message > p {
   font-family: "Times New Roman", Times, serif;
+  font-size: 12px;
   width: 20vw;
+  padding: 10px;
 }
 
 .address {
-  width: 18vw;
-  height: 45vh;
+  width: 17vw;
+  height: 40vh;
   padding-top: 22vh;
   padding-left: 4vw;
 }
 .address > p {
   font-family: "Times New Roman", Times, serif;
+  font-size: 12px;
   margin: 0;
 }
 

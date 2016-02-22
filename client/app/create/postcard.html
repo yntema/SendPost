@@ -13,15 +13,41 @@
       height: 3.875in;
       left: 0.1875in;
       top: 0.1875in;
-      background-color: #4C5365;
     }
     img {display: block;}
-    .image {position: absolute; top: 0; left: 0; width: 66%;}
+    .image {position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 66%;
+            transform: rotate(270deg);
+            -moz-transform:rotate(270deg);
+            -webkit-transform:rotate(270deg);
+            -o-transform:rotate(270deg);
+            -ms-transform:rotate(270deg);
+    }
+    #message-container {
+      display: block;
+      position: absolute;
+      top: 1.65in; 
+      left: 4.5in;
+    }
+    .message {
+      font-size: 25px;
+      text-align: center;
+      transform: rotate(270deg);
+      -moz-transform:rotate(270deg);
+      -webkit-transform:rotate(270deg);
+      -o-transform:rotate(270deg);
+      -ms-transform:rotate(270deg);
+    }
   </style>
   </head>
 <body>  
   <div id="container">
     <img class="image" src="{{picture}}">
+    <div id="message-container">
+      <p class="message"> {{messageFront}}</p>
+    </div>
   </div>
 </body>  
 </html>  

@@ -3,6 +3,9 @@
   <section layout="column" flex layout-padding layout-margin >
     <div class="card-container">
       <img class="mainPic" src='{{ picture }}'>
+      <div class="message-front">
+        <p>{{ user.messageFront }}</p>
+      </div>
     </div>
     <div class="card-container-back" layout="row">
       <div layout="column" class="message">
@@ -70,7 +73,14 @@
             </md-input-container>
           </div>
           <md-input-container class="md-block">
-            <label>Message</label>
+            <label>Front Message</label>
+            <input name="messageFront" ng-model="user.messageFront" md-maxlength="16" required md-select-on-focus></textarea>
+            <div ng-messages="userForm.messageFront.$error" role="alert">
+              <div ng-message="maxlength">Please keep it under 16 characters</div>
+            </div>
+          </md-input-container>
+          <md-input-container class="md-block">
+            <label>Message Back</label>
             <textarea ng-model="user.message" md-maxlength="300" rows="5" required md-select-on-focus></textarea>
           </md-input-container>
           <md-button type="submit" class="md-raised md-primary">Send It!</md-button>
