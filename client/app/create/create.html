@@ -73,13 +73,6 @@
             </md-input-container>
           </div>
           <md-input-container class="md-block">
-            <label>Front Message</label>
-            <input name="messageFront" ng-model="user.messageFront" md-maxlength="16" required md-select-on-focus></textarea>
-            <div ng-messages="userForm.messageFront.$error" role="alert">
-              <div ng-message="maxlength">Please keep it under 16 characters</div>
-            </div>
-          </md-input-container>
-          <md-input-container class="md-block">
             <label>Message Back</label>
             <textarea ng-model="user.message" md-maxlength="300" rows="5" required md-select-on-focus></textarea>
           </md-input-container>

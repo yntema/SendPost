@@ -10,6 +10,7 @@ angular.module('mailthat.create', [])
 
 
   $scope.sendIt = function() {
+
     Postcard.sendPostcard({
       name: $scope.user.name,
       address: $scope.user.address,
@@ -18,7 +19,6 @@ angular.module('mailthat.create', [])
       state: $scope.user.state,
       postalCode: $scope.user.postalCode,
       front: $scope.picture,
-      messageFront: $scope.user.messageFront,
       message: $scope.user.message
     })
     .then(function (err, data) {
