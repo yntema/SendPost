@@ -18,7 +18,7 @@ app.use(express.static(__dirname + '/../client'));
 
 
 app.post('/postcard', function (req, res, next) {
-  var template = fs.readFileSync('/../client/app/create/postcard.html').toString();
+  var template = fs.readFileSync('/../client/app/create/postcard').toString();
   Lob.postcards.create({
     description: 'Demo Postcard job',
     to: {
