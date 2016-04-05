@@ -41,6 +41,6 @@ app.post('/postcard', function (req, res, next) {
 })
 
 console.log(`server running on port ${port} in ${process.env.NODE_ENV} mode`);
-app.listen(3000);
+app.listen(port);
 
 module.exports = app;
