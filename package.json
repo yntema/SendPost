@@ -7,7 +7,7 @@
     "Gerrit Yntema"
   ],
   "scripts": {
-    "start": "gulp",
+    "start": "nodemon server/server.js",
     "lint": "jscs ./"
   },
   "pre-commit": "lint",
