@@ -9,6 +9,8 @@ var router = require('express').Router();
 
 var app = express();
 
+var port = process.env.PORT || 3000;
+
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -38,7 +40,7 @@ app.post('/postcard', function (req, res, next) {
   });
 })
 
-console.log('Listening on 3000');
+console.log(`server running on port ${port} in ${process.env.NODE_ENV} mode`);
 app.listen(3000);
 
 module.exports = app;
