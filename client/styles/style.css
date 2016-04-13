@@ -1,5 +1,5 @@
 body {
-  font-family: 'Poiret One', cursive;
+  font-family: 'Lato', sans-serif;
 }
 
 h1 {
@@ -9,6 +9,24 @@ h1 {
 h1 > a {
   text-decoration: none;
   color: #fff;
+}
+
+input {
+  border: none;
+}
+
+textarea {
+  border: none;
+}
+
+.city {
+  width: 50%
+}
+.state {
+  width: 15%
+}
+.zip {
+  width: 20%;
 }
 
 .header {
@@ -121,7 +139,6 @@ h1 > a {
 .images:hover {
   opacity: 0.8;
 }
-
 
 .form-background {
   background-color: #FED587;

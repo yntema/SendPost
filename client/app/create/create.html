@@ -9,12 +9,18 @@
     </div>
     <div class="card-container-back" layout="row">
       <div layout="column" class="message">
+        <p><textarea placeholder="Enter message" ng-model="user.message"></textarea></p>
         <p>{{ user.message }}</p>
       </div>
       <div layout="column" class="address">
-        <p>{{ user.name }}</p>
-        <p>{{ user.address }}</p>
-        <p>{{ user.city }} {{ user.state }} {{ user.postalCode }}</p>
+        <p><input style="border: none;" placeholder="full name" ng-model="user.name"></p>
+        <p><input placeholder="address" ng-model="user.address"></p>
+        <p><input placeholder="address line 2" ng-model="user.address2"></p>
+        <p>
+          <input class="city" placeholder="city" ng-model="user.city">
+          <input class="state" placeholder="state" ng-model="user.state">
+          <input class="zip" placeholder="zip" ng-model="user.postalCode">
+        </p>
       </div>
     </div>
   </section>
