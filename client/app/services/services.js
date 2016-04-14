@@ -58,7 +58,7 @@ angular.module('mailthat.services', [])
    })
    .then(function (resp) {
       sentCard = resp.data;
-      $location.path('/checkout');
+      $location.path('/sent');
    });
   }
 
