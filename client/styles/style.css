@@ -29,25 +29,20 @@ textarea {
   width: 20%;
 }
 
+.login-page {
+  height: 90vh;
+  width: 100vw;
+  background-image: url("https://images.unsplash.com/reserve/jsygaVpSPKes2SCJeihQ_EM2C5950.jpg?crop=entropy&fit=crop&fm=jpg&h=725&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1300");
+  background-repeat: no-repeat;
+}
+
 .gridListdemoBasicUsage md-grid-list {
   margin: 8px; }
-.gridListdemoBasicUsage .gray {
-  background: #f5f5f5; }
-.gridListdemoBasicUsage .green {
-  background: #b9f6ca; }
-.gridListdemoBasicUsage .yellow {
-  background: #ffff8d; }
-.gridListdemoBasicUsage .blue {
-  background: #84ffff; }
-.gridListdemoBasicUsage .purple {
-  background: #b388ff; }
-.gridListdemoBasicUsage .red {
-  background: #ff8a80; }
 .gridListdemoBasicUsage md-grid-tile {
   transition: all 400ms ease-out 50ms; }
 
 .header {
-  background-color: #4C5365;
+  background-color: #2E3C56;
   color: white;
   margin: 0;
   padding: 10px;
